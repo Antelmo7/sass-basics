@@ -4,6 +4,20 @@ $tertiary-color:#BABD8D;
 $primary-text-color:#7C6A0A;
 $font-stack: 'IBM Plex Sans' , sans-serif;
 
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin buttonStyle {
+  button {
+    background: none;
+    border-style: none;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,8 +42,7 @@ nav {
   padding: 20px;
   padding-left: 60px;
   padding-right: 60px;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between, center);
   color: $primary-text-color;
 
   p {
@@ -41,10 +54,7 @@ nav {
     display: flex;
     gap: 20px;
 
-    button {
-      border: none;
-      background: none;
-    }
+    @include buttonStyle;
   }
 }
 
@@ -54,8 +64,7 @@ article {
   padding-left: 60px;
   padding-right: 60px;
   color: $primary-text-color;
-  display:  flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between, center);
 
   h1 {
     font-size: 6rem;
@@ -68,16 +77,21 @@ article {
     font-weight: 400;
   }
 
+  @include buttonStyle;
   button {
     width: 260px;
     height: 72px;
     margin-top: 80px;
     background-color: #FA9500;
-    border: none;
     border-radius: 35px;
     color: white;
     font-size: 2.3rem;
     font-weight: 700;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
   }
 
   img {
@@ -90,7 +104,6 @@ section {
   width: 100%;
   height: auto;
   padding: 60px;
-  padding-top: 100px;
 
   h2 {
     font-size: 5rem;
@@ -99,14 +112,12 @@ section {
   }
 
   .healthcare {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 
     .cards-section {
+      @include flexCenter(row, center, center);
       width: 100%;
       padding-top: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
       column-gap: 200px;
       row-gap: 80px;
@@ -119,10 +130,7 @@ section {
         background-color: $secundary-color;
         color: $primary-text-color;
         border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter(column, center, center);
         gap: 12px;
   
         .icon {
@@ -134,9 +142,7 @@ section {
   
         .product-img {
           width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flexCenter(row, center, center);
   
           img {
             width: 241px;
@@ -172,15 +178,103 @@ section {
 }
 
 .info-section {
+  padding-top: 0;
+  color: $primary-text-color;
 
   h2 {
     font-weight: 500;
   }
 }
 
+.about-us {
+  .mission-section {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px; 
+    padding-bottom: 180px; 
+    @include flexCenter(row, space-between, center);
+
+    div {
+      @include flexCenter(row, space-between, center);
+      gap: 24px;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #E86424;
+      text-align: center;
+    }
+  }
+}
+
+.gallery {
+  .gallery-images {
+    @include flexCenter(row, space-between, center);
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    img {
+      width: 30vw;
+      height: 45vh;
+      object-fit: cover;
+      object-position: 5px 35%;
+      border-radius: 16px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+      }
+    }
+  }
+}
+
+.location {
+  color: #E86424;
+
+  h3 {
+    font-size: 3.5rem;
+    font-weight: 400;
+  }
+  
+  p {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  
+  .map {
+    @include flexCenter(row, center, center);
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
 footer {
-  $background: #fa9500;
-  background-color: $background;
+  background-color: #fa9500;
   width: 100%;
-  height: 250px;
+  height: auto;
+  padding: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 60px;
+  color: white;
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .social-media {
+    @include flexCenter(row, center, center);
+    gap: 16px;
+  }
 }

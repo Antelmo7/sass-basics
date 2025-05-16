@@ -22,7 +22,9 @@ nav {
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   color: #7C6A0A;
 }
 nav p {
@@ -34,8 +36,8 @@ nav .icons {
   gap: 20px;
 }
 nav .icons button {
-  border: none;
   background: none;
+  border-style: none;
 }
 
 article {
@@ -45,7 +47,9 @@ article {
   padding-right: 60px;
   color: #7C6A0A;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 article h1 {
   font-size: 6rem;
@@ -57,15 +61,22 @@ article p {
   font-weight: 400;
 }
 article button {
+  background: none;
+  border-style: none;
+}
+article button {
   width: 260px;
   height: 72px;
   margin-top: 80px;
   background-color: #FA9500;
-  border: none;
   border-radius: 35px;
   color: white;
   font-size: 2.3rem;
   font-weight: 700;
+}
+article button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }
 article img {
   width: 25vw;
@@ -76,7 +87,6 @@ section {
   width: 100%;
   height: auto;
   padding: 60px;
-  padding-top: 100px;
 }
 section h2 {
   font-size: 5rem;
@@ -84,14 +94,15 @@ section h2 {
   color: #7C6A0A;
 }
 section .healthcare, section .furniture {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 section .healthcare .cards-section, section .furniture .cards-section {
-  width: 100%;
-  padding-top: 40px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding-top: 40px;
   flex-wrap: wrap;
   -moz-column-gap: 200px;
        column-gap: 200px;
@@ -120,6 +131,7 @@ section .healthcare .cards-section .product-card .icon, section .furniture .card
 section .healthcare .cards-section .product-card .product-img, section .furniture .cards-section .product-card .product-img {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -142,12 +154,106 @@ section .furniture .cards-section .product-card {
   color: #fff;
 }
 
+.info-section {
+  padding-top: 0;
+  color: #7C6A0A;
+}
 .info-section h2 {
   font-weight: 500;
+}
+
+.about-us .mission-section {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-us .mission-section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #E86424;
+  text-align: center;
+}
+
+.gallery .gallery-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+.gallery .gallery-images img {
+  width: 30vw;
+  height: 45vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 5px 35%;
+     object-position: 5px 35%;
+  border-radius: 16px;
+}
+.gallery .gallery-images img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.location {
+  color: #E86424;
+}
+.location h3 {
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+.location p {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.location .map {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.location .map img {
+  width: 100%;
 }
 
 footer {
   background-color: #fa9500;
   width: 100%;
-  height: 250px;
+  height: auto;
+  padding: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 60px;
+  color: white;
+}
+footer h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+footer p {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }/*# sourceMappingURL=main.css.map */
