@@ -35,6 +35,9 @@ nav .icons {
   display: flex;
   gap: 20px;
 }
+nav .icons svg {
+  color: #7C6A0A;
+}
 nav .icons button {
   background: none;
   border-style: none;

@@ -53,6 +53,10 @@ nav {
   .icons {
     display: flex;
     gap: 20px;
+    
+    svg {
+      color: $primary-text-color;
+    }
 
     @include buttonStyle;
   }
